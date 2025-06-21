@@ -1,7 +1,8 @@
+import { router as jokesRouter } from "./routes/jokes.route";
+import { router as helpRoute } from "./routes/help.route";
+import { databaseConnection } from "./config/mongodb";
 import express from "express";
 import cors from "cors";
-import { router as jokesRouter } from "./routes/jokes.route";
-import { databaseConnection } from "./config/mongodb";
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(express.json());
 
 //routes
 app.use("/api", jokesRouter);
+app.use("/api", helpRoute);
 
 //start the mongoDB connection
 databaseConnection();
