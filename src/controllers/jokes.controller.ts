@@ -1,12 +1,22 @@
 import type { Request, Response } from "express";
 import Jokes from "../models/jokes.models";
 
-export const allJokes = async (req: Request, res: Response) => {
+export const getAllJokes = async (req: Request, res: Response) => {
   try {
-    const jokes = await Jokes.find();
-    res.status(200).json(jokes);
+    const allJokes = await Jokes.find();
+
+    if (allJokes.length === 0) {
+      res.status(404).json({ message: "Nenhuma piada encontrada" });
+      return;
+    }
+
+    res.status(200).json(allJokes);
   } catch (error) {
-    res.status(404).json({ message: "Algo deu errado ao buscar as piadas!" });
+    if (error instanceof Error) {
+      res.status(500).json({ message: error.message });
+      return;
+    }
+    res.status(500).json({ message: "Erro interno do servidor" });
   }
 };
 
@@ -17,7 +27,11 @@ export const createJoke = async (req: Request, res: Response) => {
       .status(201)
       .json({ message: "Piada criada com sucesso!", data: newJoke });
   } catch (error) {
-    res.status(404).json({ message: "Algo deu errado ao buscar as piadas!" });
+    if (error instanceof Error) {
+      res.status(500).json({ message: error.message });
+      return;
+    }
+    res.status(500).json({ message: "Erro interno do servidor" });
   }
 };
 
