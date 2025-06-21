@@ -9,6 +9,6 @@ import { Router } from "express";
 export const router = Router();
 
 router.get("/piadas", getAllJokes);
-router.post("/criar", createJoke);
-router.delete("/deletar/:id", deleteJoke);
-router.put("/atualizar/:id", updateJoke);
+router.post("/piadas/criar", createJoke);
+router.delete("/piadas/deletar/:id", deleteJoke);
+router.put("/piadas/atualizar/:id", updateJoke);
