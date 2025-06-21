@@ -13,13 +13,13 @@ Bem-vindo à API de Piadas, uma aplicação robusta e bem estruturada desenvolvi
 
 ### 📡 Rotas da API
 
-| Rotas                   | Método   | Descrição                    |
-| ----------------------- | -------- | ---------------------------- |
-| `/api/piadas`           | `GET`    | Retorna todas as piadas      |
-| `/piadas/:id`           | `GET`    | Retorna uma piada específica |
-| `/piadas/criar`         | `POST`   | Cria uma nova piada          |
-| `/piadas/deletar/:id`   | `DELETE` | Deleta uma piada             |
-| `/piadas/atualizar/:id` | `PUT`    | Atualiza uma piada           |
+| Rotas                       | Método   | Descrição                    |
+| --------------------------- | -------- | ---------------------------- |
+| `/api/piadas`               | `GET`    | Retorna todas as piadas      |
+| `/api/piadas/:id`           | `GET`    | Retorna uma piada específica |
+| `/api/piadas/criar`         | `POST`   | Cria uma nova piada          |
+| `/api/piadas/deletar/:id`   | `DELETE` | Deleta uma piada             |
+| `/api/piadas/atualizar/:id` | `PUT`    | Atualiza uma piada           |
 
 Exemplo de resposta da rota `/piadas/criar`
 
@@ -36,7 +36,7 @@ Exemplo de resposta da rota `/piadas/criar`
 }
 ```
 
-> Todas as rotas possuem um padrão de resposta semântica, garantindo clareza e entendimento dos desenvolvedores.
+> [!NOTE] Todas as rotas possuem um padrão de resposta semântica, garantindo clareza e entendimento dos desenvolvedores.
 
 - **Status HTTP**: Semântica clara (200 para sucesso, 404 para não encontrado, 500 para erros internos).
 
