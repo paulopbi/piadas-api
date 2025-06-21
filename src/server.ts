@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { router as jokesRouter } from "./routes/jokes.routes";
+import { router as jokesRouter } from "./routes/jokes.route";
 import { databaseConnection } from "./config/mongodb";
 
 const app = express();
