@@ -1,4 +1,4 @@
-import type { Request, Response } from "express";
+import { type Request, type Response } from "express";
 import Jokes from "../models/jokes.model";
 
 export const getAllJokes = async (req: Request, res: Response) => {
