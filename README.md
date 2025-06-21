@@ -36,7 +36,7 @@ Exemplo de resposta da rota `/piadas/criar`
 }
 ```
 
-> [!NOTE] Todas as rotas possuem um padrão de resposta semântica, garantindo clareza e entendimento dos desenvolvedores.
+> **Todas as rotas possuem um padrão de resposta semântica, garantindo clareza e entendimento dos desenvolvedores.**
 
 - **Status HTTP**: Semântica clara (200 para sucesso, 404 para não encontrado, 500 para erros internos).
 
