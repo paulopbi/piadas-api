@@ -31,6 +31,34 @@ export const deleteJoke = async (req: Request, res: Response) => {
     }
     res.status(200).json({ message: "Piada deletada com sucesso!" });
   } catch (error) {
-    res.status(404).json({ message: "Algo deu errado ao deletar a piada!" });
+    if (error instanceof Error) {
+      res.status(500).json({ message: error.message });
+      return;
+    }
+    res.status(500).json({ message: "Erro interno do servidor" });
+  }
+};
+
+export const updateJoke = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  if (!id) {
+    res.status(400).json({ message: "ID da piada é obrigatório" });
+    return;
+  }
+
+  try {
+    const updatedJoke = await Jokes.findByIdAndUpdate(id, req.body, {
+      new: true,
+    });
+    res
+      .status(200)
+      .json({ message: "Piada atualizada com sucesso!", data: updatedJoke });
+  } catch (error) {
+    if (error instanceof Error) {
+      res.status(500).json({ message: error.message });
+      return;
+    }
+    res.status(500).json({ message: "Erro interno do servidor" });
   }
 };
