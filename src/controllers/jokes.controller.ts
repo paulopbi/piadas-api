@@ -9,7 +9,7 @@ export const createJoke = async (req: Request, res: Response) => {
       .json({ message: "Piada criada com sucesso!", data: newJoke });
   } catch (error) {
     if (error instanceof Error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ error: error.message });
       return;
     }
     res.status(500).json({ message: "Erro interno do servidor" });
@@ -27,7 +27,7 @@ export const deleteJoke = async (req: Request, res: Response) => {
     res.status(200).json({ message: "Piada deletada com sucesso!" });
   } catch (error) {
     if (error instanceof Error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ error: error.message });
       return;
     }
     res.status(500).json({ message: "Erro interno do servidor" });
@@ -51,7 +51,7 @@ export const updateJoke = async (req: Request, res: Response) => {
       .json({ message: "Piada atualizada com sucesso!", data: updatedJoke });
   } catch (error) {
     if (error instanceof Error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ error: error.message });
       return;
     }
     res.status(500).json({ message: "Erro interno do servidor" });
@@ -70,7 +70,7 @@ export const getAllJokes = async (req: Request, res: Response) => {
     res.status(200).json(allJokes);
   } catch (error) {
     if (error instanceof Error) {
-      res.status(500).json({ message: error.message });
+      res.status(500).json({ error: error.message });
       return;
     }
     res.status(500).json({ message: "Erro interno do servidor" });
