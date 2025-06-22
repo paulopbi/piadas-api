@@ -26,6 +26,7 @@ Exemplo de resposta da rota `/piadas/criar`
 ```json
 {
   "message": "...", //mensagem de retorno
+  "ok": true, //indica se a requisição foi bem sucedida
   "data": {
     "_id": "65a1b2c3...",
     "conteudo": "...", //contem a piada
