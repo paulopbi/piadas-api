@@ -1,4 +1,4 @@
-import { router as jokesRouter } from "./routes/jokes.route";
+import jokesRouter from "./routes/jokes.route";
 import { getHelp } from "./controllers/help.controller";
 import { databaseConnection } from "./config/mongodb";
 import express from "express";
