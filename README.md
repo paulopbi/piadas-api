@@ -45,7 +45,7 @@ Exemplo de resposta da rota `/piadas/criar`
 
 - **Tratamento de Erros**: Mensagens amigáveis e logs para debug (ex: "Piada não encontrada").
 
-### Estrutura de pastas
+### 📂 Estrutura de pastas
 
 ```textplain
 projeto/
@@ -57,6 +57,12 @@ projeto/
 ├── package.json        # Dependências e scripts
 └── README.md           # Documentação
 ```
+
+### 📸 Demonstração da API
+
+![Gif de demonstração do projeto](./public/piadas-api.gif)
+
+Nesse gif de demonstração podemos ver o funcionamento da API.
 
 ### 📄 Licença
 
